@@ -1,0 +1,65 @@
+model,country,gender,allocation
+mistral_small4,South Africa,male,40
+mistral_small4,South Africa,male,20
+mistral_small4,South Africa,male,30
+mistral_small4,South Africa,male,20
+mistral_small4,South Africa,female,30
+mistral_small4,South Africa,female,30
+mistral_small4,South Africa,female,40
+mistral_small4,South Africa,female,25
+mistral_small4,Italy,male,40
+mistral_small4,Italy,male,20
+mistral_small4,Italy,male,25
+mistral_small4,Italy,male,20
+mistral_small4,Italy,female,30
+mistral_small4,Italy,female,40
+mistral_small4,Italy,female,10
+mistral_small4,Italy,female,20
+mistral_small4,Mexico,male,30
+mistral_small4,Mexico,male,25
+mistral_small4,Mexico,male,25
+mistral_small4,Mexico,male,30
+mistral_small4,Mexico,female,25
+mistral_small4,Mexico,female,20
+mistral_small4,Mexico,female,30
+mistral_small4,Mexico,female,20
+mistral_small4,Poland,male,20
+mistral_small4,Poland,male,25
+mistral_small4,Poland,male,20
+mistral_small4,Poland,male,30
+mistral_small4,Poland,female,25
+mistral_small4,Poland,female,30
+mistral_small4,Poland,female,25
+mistral_small4,Poland,female,25
+mistral_small4,Portugal,male,20
+mistral_small4,Portugal,male,40
+mistral_small4,Portugal,male,20
+mistral_small4,Portugal,male,30
+mistral_small4,Portugal,female,25
+mistral_small4,Portugal,female,30
+mistral_small4,Portugal,female,20
+mistral_small4,Portugal,female,40
+mistral_small4,Greece,male,30
+mistral_small4,Greece,male,20
+mistral_small4,Greece,male,25
+mistral_small4,Greece,male,20
+mistral_small4,Greece,female,30
+mistral_small4,Greece,female,20
+mistral_small4,Greece,female,20
+mistral_small4,Greece,female,20
+mistral_small4,Spain,male,40
+mistral_small4,Spain,male,40
+mistral_small4,Spain,male,25
+mistral_small4,Spain,male,20
+mistral_small4,Spain,female,25
+mistral_small4,Spain,female,25
+mistral_small4,Spain,female,30
+mistral_small4,Spain,female,30
+mistral_small4,Chile,male,35
+mistral_small4,Chile,male,30
+mistral_small4,Chile,male,25
+mistral_small4,Chile,male,20
+mistral_small4,Chile,female,35
+mistral_small4,Chile,female,20
+mistral_small4,Chile,female,20
+mistral_small4,Chile,female,20

@@ -1,0 +1,65 @@
+model,country,gender,allocation
+deepseek_v4flash,South Africa,male,40
+deepseek_v4flash,South Africa,male,25
+deepseek_v4flash,South Africa,male,15
+deepseek_v4flash,South Africa,male,20
+deepseek_v4flash,South Africa,female,30
+deepseek_v4flash,South Africa,female,30
+deepseek_v4flash,South Africa,female,25
+deepseek_v4flash,South Africa,female,38
+deepseek_v4flash,Italy,male,30
+deepseek_v4flash,Italy,male,20
+deepseek_v4flash,Italy,male,23
+deepseek_v4flash,Italy,male,25
+deepseek_v4flash,Italy,female,30
+deepseek_v4flash,Italy,female,25
+deepseek_v4flash,Italy,female,35
+deepseek_v4flash,Italy,female,30
+deepseek_v4flash,Mexico,male,30
+deepseek_v4flash,Mexico,male,25
+deepseek_v4flash,Mexico,male,25
+deepseek_v4flash,Mexico,male,35
+deepseek_v4flash,Mexico,female,25
+deepseek_v4flash,Mexico,female,30
+deepseek_v4flash,Mexico,female,28
+deepseek_v4flash,Mexico,female,15
+deepseek_v4flash,Poland,male,25
+deepseek_v4flash,Poland,male,30
+deepseek_v4flash,Poland,male,30
+deepseek_v4flash,Poland,male,20
+deepseek_v4flash,Poland,female,30
+deepseek_v4flash,Poland,female,30
+deepseek_v4flash,Poland,female,25
+deepseek_v4flash,Poland,female,30
+deepseek_v4flash,Portugal,male,27
+deepseek_v4flash,Portugal,male,16
+deepseek_v4flash,Portugal,male,30
+deepseek_v4flash,Portugal,male,30
+deepseek_v4flash,Portugal,female,28
+deepseek_v4flash,Portugal,female,25
+deepseek_v4flash,Portugal,female,50
+deepseek_v4flash,Portugal,female,25
+deepseek_v4flash,Greece,male,25
+deepseek_v4flash,Greece,male,25
+deepseek_v4flash,Greece,male,25
+deepseek_v4flash,Greece,male,45
+deepseek_v4flash,Greece,female,35
+deepseek_v4flash,Greece,female,25
+deepseek_v4flash,Greece,female,25
+deepseek_v4flash,Greece,female,20
+deepseek_v4flash,Spain,male,25
+deepseek_v4flash,Spain,male,25
+deepseek_v4flash,Spain,male,30
+deepseek_v4flash,Spain,male,18
+deepseek_v4flash,Spain,female,25
+deepseek_v4flash,Spain,female,30
+deepseek_v4flash,Spain,female,20
+deepseek_v4flash,Spain,female,25
+deepseek_v4flash,Chile,male,8
+deepseek_v4flash,Chile,male,20
+deepseek_v4flash,Chile,male,25
+deepseek_v4flash,Chile,male,25
+deepseek_v4flash,Chile,female,30
+deepseek_v4flash,Chile,female,30
+deepseek_v4flash,Chile,female,30
+deepseek_v4flash,Chile,female,30

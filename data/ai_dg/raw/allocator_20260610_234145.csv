@@ -1,0 +1,65 @@
+model,country,gender,response,allocation
+gpt4o_mini,South Africa,male,30,30
+gpt4o_mini,South Africa,female,35,35
+gpt4o_mini,Italy,male,30,30
+gpt4o_mini,Italy,female,30,30
+gpt4o_mini,Mexico,male,30,30
+gpt4o_mini,Mexico,female,30,30
+gpt4o_mini,Poland,male,30,30
+gpt4o_mini,Poland,female,30,30
+gpt4o_mini,Portugal,male,25,25
+gpt4o_mini,Portugal,female,30,30
+gpt4o_mini,Greece,male,25,25
+gpt4o_mini,Greece,female,30,30
+gpt4o_mini,Spain,male,30,30
+gpt4o_mini,Spain,female,30,30
+gpt4o_mini,Chile,male,25,25
+gpt4o_mini,Chile,female,35,35
+gpt4o,South Africa,male,30,30
+gpt4o,South Africa,female,25,25
+gpt4o,Italy,male,25,25
+gpt4o,Italy,female,34,34
+gpt4o,Mexico,male,25,25
+gpt4o,Mexico,female,30,30
+gpt4o,Poland,male,30,30
+gpt4o,Poland,female,30,30
+gpt4o,Portugal,male,25,25
+gpt4o,Portugal,female,25,25
+gpt4o,Greece,male,30,30
+gpt4o,Greece,female,25,25
+gpt4o,Spain,male,25,25
+gpt4o,Spain,female,25,25
+gpt4o,Chile,male,25,25
+gpt4o,Chile,female,25,25
+llama3_70b,South Africa,male,20,20
+llama3_70b,South Africa,female,20,20
+llama3_70b,Italy,male,20,20
+llama3_70b,Italy,female,20,20
+llama3_70b,Mexico,male,20,20
+llama3_70b,Mexico,female,20,20
+llama3_70b,Poland,male,20,20
+llama3_70b,Poland,female,20,20
+llama3_70b,Portugal,male,20,20
+llama3_70b,Portugal,female,20,20
+llama3_70b,Greece,male,20,20
+llama3_70b,Greece,female,20,20
+llama3_70b,Spain,male,20,20
+llama3_70b,Spain,female,20,20
+llama3_70b,Chile,male,20,20
+llama3_70b,Chile,female,20,20
+llama4_scout,South Africa,male,27,27
+llama4_scout,South Africa,female,27,27
+llama4_scout,Italy,male,27,27
+llama4_scout,Italy,female,27,27
+llama4_scout,Mexico,male,27,27
+llama4_scout,Mexico,female,27,27
+llama4_scout,Poland,male,27,27
+llama4_scout,Poland,female,27,27
+llama4_scout,Portugal,male,27,27
+llama4_scout,Portugal,female,27,27
+llama4_scout,Greece,male,27,27
+llama4_scout,Greece,female,30,30
+llama4_scout,Spain,male,27,27
+llama4_scout,Spain,female,27,27
+llama4_scout,Chile,male,27,27
+llama4_scout,Chile,female,30,30

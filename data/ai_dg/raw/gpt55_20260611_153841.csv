@@ -1,0 +1,17 @@
+model,country,gender,response,allocation
+gpt_5.5,South Africa,male,25,25
+gpt_5.5,South Africa,female,30,30
+gpt_5.5,Italy,male,20,20
+gpt_5.5,Italy,female,30,30
+gpt_5.5,Mexico,male,20,20
+gpt_5.5,Mexico,female,30,30
+gpt_5.5,Poland,male,20,20
+gpt_5.5,Poland,female,30,30
+gpt_5.5,Portugal,male,25,25
+gpt_5.5,Portugal,female,30,30
+gpt_5.5,Greece,male,25,25
+gpt_5.5,Greece,female,30,30
+gpt_5.5,Spain,male,30,30
+gpt_5.5,Spain,female,30,30
+gpt_5.5,Chile,male,20,20
+gpt_5.5,Chile,female,30,30

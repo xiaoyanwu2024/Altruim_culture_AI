@@ -1,0 +1,17 @@
+model,country,gender,response,allocation
+mistral_small4,South Africa,male,25,25
+mistral_small4,South Africa,female,25,25
+mistral_small4,Italy,male,25,25
+mistral_small4,Italy,female,25,25
+mistral_small4,Mexico,male,25,25
+mistral_small4,Mexico,female,25,25
+mistral_small4,Poland,male,25,25
+mistral_small4,Poland,female,30,30
+mistral_small4,Portugal,male,30,30
+mistral_small4,Portugal,female,25,25
+mistral_small4,Greece,male,25,25
+mistral_small4,Greece,female,25,25
+mistral_small4,Spain,male,25,25
+mistral_small4,Spain,female,25,25
+mistral_small4,Chile,male,30,30
+mistral_small4,Chile,female,25,25

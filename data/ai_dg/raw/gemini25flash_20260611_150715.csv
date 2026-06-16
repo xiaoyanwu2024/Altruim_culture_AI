@@ -1,0 +1,17 @@
+model,country,gender,response,allocation
+gemini_2.5_flash,South Africa,male,10,10
+gemini_2.5_flash,South Africa,female,30,30
+gemini_2.5_flash,Italy,male,20,20
+gemini_2.5_flash,Italy,female,25,25
+gemini_2.5_flash,Mexico,male,25,25
+gemini_2.5_flash,Mexico,female,25,25
+gemini_2.5_flash,Poland,male,8,8
+gemini_2.5_flash,Poland,female,25,25
+gemini_2.5_flash,Portugal,male,10,10
+gemini_2.5_flash,Portugal,female,15,15
+gemini_2.5_flash,Greece,male,8,8
+gemini_2.5_flash,Greece,female,15,15
+gemini_2.5_flash,Spain,male,8,8
+gemini_2.5_flash,Spain,female,25,25
+gemini_2.5_flash,Chile,male,8,8
+gemini_2.5_flash,Chile,female,25,25

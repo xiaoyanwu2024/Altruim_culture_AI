@@ -1,0 +1,81 @@
+model,country,gender,response,allocation
+claude_haiku,Chile,female,25.0,25.0
+claude_haiku,Chile,male,25.0,25.0
+claude_haiku,Greece,female,25.0,25.0
+claude_haiku,Greece,male,25.0,25.0
+claude_haiku,Italy,female,25.0,25.0
+claude_haiku,Italy,male,25.0,25.0
+claude_haiku,Mexico,female,25.0,25.0
+claude_haiku,Mexico,male,25.0,25.0
+claude_haiku,Poland,female,25.0,25.0
+claude_haiku,Poland,male,25.0,25.0
+claude_haiku,Portugal,female,25.0,25.0
+claude_haiku,Portugal,male,25.0,25.0
+claude_haiku,South Africa,female,25.0,25.0
+claude_haiku,South Africa,male,25.0,25.0
+claude_haiku,Spain,female,25.0,25.0
+claude_haiku,Spain,male,25.0,25.0
+gpt4o,Chile,female,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,Chile,male,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o,Greece,female,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,Greece,male,I choose to give the Receiver 30 tokens.,30.0
+gpt4o,Italy,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o,Italy,male,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,Mexico,female,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,Mexico,male,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,Poland,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o,Poland,male,I'll choose to give 25 tokens to the Receiver.,25.0
+gpt4o,Portugal,female,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,Portugal,male,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,South Africa,female,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,South Africa,male,I choose to give the Receiver 25 tokens.,25.0
+gpt4o,Spain,female,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o,Spain,male,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o_mini,Chile,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Chile,male,I choose to give 25 tokens to the Receiver.,25.0
+gpt4o_mini,Greece,female,I choose to give the Receiver 25 tokens.,25.0
+gpt4o_mini,Greece,male,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Italy,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Italy,male,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Mexico,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Mexico,male,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Poland,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Poland,male,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Portugal,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Portugal,male,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,South Africa,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,South Africa,male,I choose to give the Receiver 25 tokens.,25.0
+gpt4o_mini,Spain,female,I choose to give 30 tokens to the Receiver.,30.0
+gpt4o_mini,Spain,male,I choose to give the Receiver 30 tokens.,30.0
+llama3_70b,Chile,female,20,20.0
+llama3_70b,Chile,male,20,20.0
+llama3_70b,Greece,female,20,20.0
+llama3_70b,Greece,male,20,20.0
+llama3_70b,Italy,female,20,20.0
+llama3_70b,Italy,male,20,20.0
+llama3_70b,Mexico,female,20,20.0
+llama3_70b,Mexico,male,20,20.0
+llama3_70b,Poland,female,20,20.0
+llama3_70b,Poland,male,20,20.0
+llama3_70b,Portugal,female,20,20.0
+llama3_70b,Portugal,male,20,20.0
+llama3_70b,South Africa,female,20,20.0
+llama3_70b,South Africa,male,20,20.0
+llama3_70b,Spain,female,20,20.0
+llama3_70b,Spain,male,20,20.0
+llama4_scout,Chile,female,25.0,25.0
+llama4_scout,Chile,male,27.0,27.0
+llama4_scout,Greece,female,30.0,30.0
+llama4_scout,Greece,male,25.0,25.0
+llama4_scout,Italy,female,30.0,30.0
+llama4_scout,Italy,male,30.0,30.0
+llama4_scout,Mexico,female,27.0,27.0
+llama4_scout,Mexico,male,27.0,27.0
+llama4_scout,Poland,female,30.0,30.0
+llama4_scout,Poland,male,30.0,30.0
+llama4_scout,Portugal,female,30.0,30.0
+llama4_scout,Portugal,male,30.0,30.0
+llama4_scout,South Africa,female,30.0,30.0
+llama4_scout,South Africa,male,27.0,27.0
+llama4_scout,Spain,female,30.0,30.0
+llama4_scout,Spain,male,30.0,30.0

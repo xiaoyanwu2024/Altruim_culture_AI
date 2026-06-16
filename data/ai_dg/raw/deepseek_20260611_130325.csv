@@ -1,0 +1,17 @@
+model,country,gender,response,allocation
+deepseek_v4flash,South Africa,male,22,22
+deepseek_v4flash,South Africa,female,22,22
+deepseek_v4flash,Italy,male,16,16
+deepseek_v4flash,Italy,female,20,20
+deepseek_v4flash,Mexico,male,25,25
+deepseek_v4flash,Mexico,female,8,8
+deepseek_v4flash,Poland,male,8,8
+deepseek_v4flash,Poland,female,20,20
+deepseek_v4flash,Portugal,male,18,18
+deepseek_v4flash,Portugal,female,8,8
+deepseek_v4flash,Greece,male,8,8
+deepseek_v4flash,Greece,female,25,25
+deepseek_v4flash,Spain,male,8,8
+deepseek_v4flash,Spain,female,8,8
+deepseek_v4flash,Chile,male,8,8
+deepseek_v4flash,Chile,female,8,8

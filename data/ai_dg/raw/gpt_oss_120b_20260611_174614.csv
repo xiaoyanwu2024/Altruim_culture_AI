@@ -1,0 +1,17 @@
+model,country,gender,response,allocation
+gpt_oss_120b,South Africa,male,20,20
+gpt_oss_120b,South Africa,female,30,30
+gpt_oss_120b,Italy,male,25,25
+gpt_oss_120b,Italy,female,20,20
+gpt_oss_120b,Mexico,male,20,20
+gpt_oss_120b,Mexico,female,20,20
+gpt_oss_120b,Poland,male,30,30
+gpt_oss_120b,Poland,female,30,30
+gpt_oss_120b,Portugal,male,20,20
+gpt_oss_120b,Portugal,female,30,30
+gpt_oss_120b,Greece,male,30,30
+gpt_oss_120b,Greece,female,25,25
+gpt_oss_120b,Spain,male,30,30
+gpt_oss_120b,Spain,female,25,25
+gpt_oss_120b,Chile,male,20,20
+gpt_oss_120b,Chile,female,25,25

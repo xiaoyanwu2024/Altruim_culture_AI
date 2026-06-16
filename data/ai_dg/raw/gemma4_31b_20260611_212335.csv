@@ -1,0 +1,17 @@
+model,country,gender,response,allocation
+gemma4_31b,South Africa,male,20,20
+gemma4_31b,South Africa,female,20,20
+gemma4_31b,Italy,male,20,20
+gemma4_31b,Italy,female,20,20
+gemma4_31b,Mexico,male,20,20
+gemma4_31b,Mexico,female,20,20
+gemma4_31b,Poland,male,20,20
+gemma4_31b,Poland,female,20,20
+gemma4_31b,Portugal,male,20,20
+gemma4_31b,Portugal,female,20,20
+gemma4_31b,Greece,male,20,20
+gemma4_31b,Greece,female,20,20
+gemma4_31b,Spain,male,20,20
+gemma4_31b,Spain,female,20,20
+gemma4_31b,Chile,male,20,20
+gemma4_31b,Chile,female,20,20

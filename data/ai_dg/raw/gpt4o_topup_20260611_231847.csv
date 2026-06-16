@@ -1,0 +1,17 @@
+model,country,gender,allocation
+gpt4o,South Africa,male,25
+gpt4o,South Africa,female,25
+gpt4o,Italy,male,20
+gpt4o,Italy,female,30
+gpt4o,Mexico,male,25
+gpt4o,Mexico,female,25
+gpt4o,Poland,male,30
+gpt4o,Poland,female,20
+gpt4o,Portugal,male,25
+gpt4o,Portugal,female,20
+gpt4o,Greece,male,20
+gpt4o,Greece,female,25
+gpt4o,Spain,male,25
+gpt4o,Spain,female,25
+gpt4o,Chile,male,8
+gpt4o,Chile,female,25
