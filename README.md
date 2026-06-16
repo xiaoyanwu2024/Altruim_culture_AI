@@ -2,7 +2,7 @@
 
 **Author:** Xiaoyan Wu  
 **Affiliation:** Department of Adult Psychiatry and Psychotherapy, University of Zurich  
-**Contact:** Xiaoyan.psych@gmail.com  
+**Contact:** xiaoyan.psych@gmail.com  
 **Date:** June 2026
 
 ---
