@@ -1,4 +1,4 @@
-# Data and Code — Behavioral Fidelity Without Cultural Fidelity
+# Data and Code - Behavioral Fidelity Without Cultural Fidelity
 
 **Author:** Xiaoyan Wu  
 **Affiliation:** Department of Adult Psychiatry and Psychotherapy, University of Zurich  
