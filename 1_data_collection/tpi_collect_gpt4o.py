@@ -1,0 +1,184 @@
+# =============================================================================
+# Author : Xiaoyan Wu
+# Date   : June 2026
+# Description: TPI data collection — GPT-4o (direct probability elicitation, 8 countries × 300 conditions)
+# =============================================================================
+
+"""
+GPT-4o Task 2 — direct probability elicitation (0-100 integer per trial).
+8 countries x 2 genders x 300 conditions = 4800 requests.
+"""
+import os, re, time
+from pathlib import Path
+from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import pandas as pd
+from openai import OpenAI
+
+API_KEY    = os.environ.get("OPENAI_API_KEY", "")
+MODEL_ID   = "gpt-4o"
+TP_TOKENS  = 50
+MAX_WORKERS = 40
+DATA_DIR   = Path("ai_study_data")
+
+COUNTRIES = ["South Africa","Italy","Mexico","Poland","Portugal","Greece","Spain","Chile"]
+GENDERS   = ["male","female"]
+
+def system_prompt(country, gender):
+    return (
+        f"You are a 23-year-old {gender} university student from {country}. "
+        f"You were born in {country}, hold {country} nationality, and currently live there. "
+        "You are not majoring in psychology or any related fields. "
+        "It is October 2022. "
+        "You are participating in an online behavioral economics experiment hosted on Prolific. "
+        "You have voluntarily agreed to take part, and you have normal vision. "
+        "You have no history of psychiatric or neurological illness. "
+        "The base payment is £2. Tokens earned during the game are exchanged for pence at a rate of 2.75 tokens = 1 penny. "
+        "At the end of the study, 10% of rounds are randomly selected to be implemented for real payment. "
+        "Each round is equally likely to be selected, so treat every decision seriously.\n\n"
+        "GAME INSTRUCTIONS\n"
+        "Earlier in this experiment, you completed a single-round allocation game as the Allocator. "
+        "In that game, there were two anonymous players: an Allocator and a Receiver. "
+        "The Allocator had 100 tokens and decided how many to give to the Receiver (from 8 to 50 tokens); "
+        "the Receiver had no choice and simply accepted. "
+        "You played the role of Allocator and chose how many tokens to share with the Receiver. "
+        "If you gave X tokens, your final tokens in that round were 100 - X.\n\n"
+        "You will now play a multiple-round game. "
+        "In each round, you will see how 100 tokens were divided between two other participants: an Allocator and a Receiver. "
+        "The Allocator had the right to decide how to split 100 tokens between himself/herself and the Receiver. "
+        "The Receiver could only accept the Allocator's decision. "
+        "The allocators and receivers are real participants from a previous study — "
+        "you will not be the Allocator or the Receiver in any round. "
+        "Each round involves a different pair of participants.\n\n"
+        "YOUR ROLE — THIRD PARTY\n"
+        "You are the Third Party. You start each round with 50 tokens. "
+        "After seeing the allocation outcome, you make decisions in two scenarios:\n\n"
+        "Scenario 1 — REDUCE: You decide whether to reduce the Allocator's tokens at a cost to yourself.\n"
+        "  - Yes: you spend X tokens (your tokens decrease by X); the Allocator loses X x multiplier tokens. "
+        "The multiplier will be shown each round (either 1.5 or 3.0).\n"
+        "  - No: nothing changes.\n"
+        "  Note: this decision only affects you and the Allocator. The Receiver's tokens are unchanged.\n"
+        "  Final tokens — Allocator: original - (cost x multiplier); Receiver: unchanged; You: 50 - cost.\n\n"
+        "Scenario 2 — INCREASE: You decide whether to increase the Receiver's tokens at a cost to yourself.\n"
+        "  - Yes: you spend X tokens (your tokens decrease by X); the Receiver gains X x multiplier tokens.\n"
+        "  - No: nothing changes.\n"
+        "  Note: this decision only affects you and the Receiver. The Allocator's tokens are unchanged.\n"
+        "  Final tokens — Allocator: unchanged; Receiver: original + (cost x multiplier); You: 50 - cost.\n\n"
+        "For each decision, output a single integer from 0 to 100 representing the probability "
+        "that you would choose to intervene (0 = definitely No, 100 = definitely Yes). "
+        "Output the number only. Nothing else."
+    )
+
+def user_prompt(row):
+    x1 = int(row.x1); x2 = int(row.x2)
+    cost = int(row.cost); effect = int(cost * float(row.ratio))
+    block = str(row.block_type).strip("'").upper()
+    ctx = (
+        "In this experiment you observe an allocation game between two anonymous participants:\n"
+        "- The Allocator started with 100 tokens and decided how many to give to the Receiver.\n"
+        "- The Receiver accepted whatever the Allocator decided to give.\n\n"
+    )
+    if block == "REDUCE":
+        sc = (
+            f"Round outcome:\n"
+            f"  The Allocator gave {x2} tokens to the Receiver and kept {x1} tokens for themselves.\n"
+            f"  Allocator now has: {x1} tokens\n"
+            f"  Receiver now has:  {x2} tokens\n"
+            f"  You have:          {TP_TOKENS} tokens (refreshed each round)\n\n"
+            "This is the REDUCE scenario. You decide whether to reduce the Allocator's tokens.\n\n"
+            f"If YES: Allocator ends with {x1-effect}, Receiver ends with {x2}, You end with {TP_TOKENS-cost}.\n"
+            f"If NO:  Allocator ends with {x1}, Receiver ends with {x2}, You end with {TP_TOKENS}.\n\n"
+            "What is the probability (0-100) that you would choose to intervene? Output a single integer only."
+        )
+    else:
+        sc = (
+            f"Round outcome:\n"
+            f"  The Allocator gave {x2} tokens to the Receiver and kept {x1} tokens for themselves.\n"
+            f"  Allocator now has: {x1} tokens\n"
+            f"  Receiver now has:  {x2} tokens\n"
+            f"  You have:          {TP_TOKENS} tokens (refreshed each round)\n\n"
+            "This is the INCREASE scenario. You decide whether to increase the Receiver's tokens.\n\n"
+            f"If YES: Allocator ends with {x1}, Receiver ends with {x2+effect}, You end with {TP_TOKENS-cost}.\n"
+            f"If NO:  Allocator ends with {x1}, Receiver ends with {x2}, You end with {TP_TOKENS}.\n\n"
+            "What is the probability (0-100) that you would choose to intervene? Output a single integer only."
+        )
+    return ctx + sc
+
+def parse_prob(text):
+    nums = re.findall(r'\b(\d+)\b', str(text).strip())
+    for n in nums:
+        v = int(n)
+        if 0 <= v <= 100:
+            return round(v / 100, 4)
+    return None
+
+def call_one(client, row):
+    sp = system_prompt(row.country, row.gender)
+    up = user_prompt(row)
+    for attempt in range(4):
+        try:
+            r = client.chat.completions.create(
+                model=MODEL_ID, max_tokens=10,
+                messages=[{"role": "system", "content": sp},
+                          {"role": "user",   "content": up}],
+            )
+            raw = r.choices[0].message.content.strip()
+            return parse_prob(raw)
+        except Exception as e:
+            err = str(e)
+            wait = 30 if "429" in err or "rate" in err.lower() else 2 ** attempt
+            time.sleep(wait)
+    return None
+
+def main():
+    client = OpenAI(api_key=API_KEY)
+    conditions = pd.read_excel("TPP_300Trials.xlsx")
+    conditions["block_type"] = conditions["block_type"].str.strip("'")
+    conditions["cond_id"] = range(len(conditions))
+
+    tasks = [
+        (country, gender, row)
+        for country in COUNTRIES
+        for gender in GENDERS
+        for _, row in conditions.iterrows()
+    ]
+    print(f"Total tasks: {len(tasks)}  (model: {MODEL_ID})")
+
+    rows = []
+    lock = __import__("threading").Lock()
+    done_count = [0]
+
+    def run(args):
+        country, gender, cond = args
+        # attach country/gender to cond row
+        cond = cond.copy()
+        cond["country"] = country
+        cond["gender"]  = gender
+        p = call_one(client, cond)
+        with lock:
+            done_count[0] += 1
+            if done_count[0] % 200 == 0:
+                print(f"  {done_count[0]}/{len(tasks)} done")
+        return {
+            "model": "gpt4o_prob",
+            "country": country, "gender": gender,
+            "cond_id": int(cond["cond_id"]),
+            "block_type": cond["block_type"],
+            "x1": int(cond["x1"]), "x2": int(cond["x2"]),
+            "cost": int(cond["cost"]), "ratio": float(cond["ratio"]),
+            "p_yes": p,
+        }
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+        rows = list(ex.map(run, tasks))
+
+    df = pd.DataFrame(rows)
+    valid = df["p_yes"].notna().sum()
+    ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
+    out = DATA_DIR / f"gpt4o_prob_{ts}.csv"
+    df.to_csv(out, index=False)
+    print(f"\n✅ {valid}/4800 valid → {out.name}")
+    print(f"   Still missing: {4800 - valid}")
+
+if __name__ == "__main__":
+    main()
