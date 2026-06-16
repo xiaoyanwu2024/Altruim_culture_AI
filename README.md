@@ -80,23 +80,6 @@ data_code/
 
 ---
 
-## Recommended Workflow
-
-```
-1. Raw API responses (data/ai_tpi/raw/,  data/ai_dg/raw/)
-        ↓  [code/1_data_collection/]
-2. Preprocessing (code/4_preprocessing/fig2_preprocess_data.py, etc.)
-        ↓
-3. Processed .mat files (data/ai_tpi/tpp_data.mat, data/ai_dg/dg_data.mat,
-                         data/figure_data/*.mat)
-        ↓  [code/2_model_fitting/FittingModelAI.m]
-4. Model fitting results (data/model_fitting/results_ai.mat, Results_<Model>.mat)
-        ↓  [code/3_figures/figure*/panel_*.m]
-5. Figures (Figure 2–4, Supplementary Figures S1–S5)
-```
-
----
-
 ## Software Requirements
 
 - **MATLAB** R2021b or later (Statistics and Machine Learning Toolbox required)
@@ -124,24 +107,6 @@ Per-model fitting results containing best-fitting model index, AICc, BIC, and pa
 ### results_ai.mat / results_human_aligned.mat
 Aggregated fitting results across all AI models / human participants. Used by Figure 4 and S5 scripts.
 
----
-
-## Model Description (M1–M8)
-
-The motive-cocktail framework decomposes TPI decisions into up to 8 motivational components:
-
-| Model | Added motive | Parameters |
-|-------|-------------|------------|
-| M1 | Baseline (fixed probability) | γ |
-| M2 | Self-interest (SI) | + α |
-| M3 | Shared cost inequality (SCI) | + β |
-| M4 | Victim cost inequality (VCI) | + λ |
-| M5 | Empathy / cost sensitivity (EC) | + ω |
-| M6 | Relative payoff (RP) | + κ |
-| M7 | Inequality aversion (II) | + η_no |
-| M8 | Full model | + η_yes |
-
----
 
 ## Citation
 
